@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+example/.idea/
+example/out/
+example/target/
+example/*.iml
+
+# Git
+.git/
+
+# Docker
+/example/Docker/
+/example/Dockerfile
+
+# User files
+example/data/
