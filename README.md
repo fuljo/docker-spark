@@ -8,8 +8,8 @@ Non-official Docker images to:
 - Package and run Spark-enabled Java applications inside the cluster
 
 Two images are featured:
-- `fuljo/spark-base` can be configured to run as a master, worker or history server
-- `fuljo/spark-driver` can be used to derive an image to run an application
+- [`fuljo/spark-base`](https://hub.docker.com/r/fuljo/spark-base) can be configured to run as a master, worker or history server
+- [`fuljo/spark-driver`](https://hub.docker.com/r/fuljo/spark-driver) can be used to derive an image to run an application
 
 We also provide an example of a WordCount application.
 
