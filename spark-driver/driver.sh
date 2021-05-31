@@ -31,5 +31,4 @@ set -x
   --deploy-mode client \
   $SPARK_CONF_OPTS \
   "$APP_JAR_LOCATION" $APP_ARGS
-set +x
 
