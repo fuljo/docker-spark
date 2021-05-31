@@ -122,13 +122,15 @@ services:
       - "18080:18080"
   spark-driver:
     image: fuljo/word-count-spark
+    build: .
     depends_on:
       - spark-master
       - spark-worker
     environment:
-      - APP_ARGS=data/in.txt
+      - APP_ARGS=/opt/spark/work/data/in.txt
       - SPARK_EVENTLOG_ENABLED=1
     volumes:
+      - ./data:/opt/spark/work/data
       - events:/tmp/spark-events
 volumes:
   events: {}
@@ -136,11 +138,15 @@ volumes:
 
 Notice that:
 - We used a named volume `events`, so that the history server can see the events logged by the other nodes.
-- We bound the local directory `example/data` to the directory where the worker executes the application. In this way the application can access the needed data while running inside the worker.
+- We bound the local directory `example/data` inside both the worker and the driver. Failing to do so will prevent the application from finding the text document it has to work on.
 
 You can run this with:
 ```sh
 docker compose up
+```
+and if you want more workers:
+```sh
+docker compose --scale spark-worker=<num_workers> up
 ```
 
 ## Contributing
