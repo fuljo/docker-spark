@@ -2,7 +2,7 @@ images = spark-base spark-driver
 
 # Build arguments
 ALPINE_VERSION = 3.13
-SPARK_VERSION = 3.1.1
+SPARK_VERSION = 3.1.2
 SPARK_MAJOR_VERSION != echo $(SPARK_VERSION) | cut -d '.' -f 1
 HADOOP_VERSION = 3.2
 JAVA_VERSION = 11

@@ -19,8 +19,10 @@ This project aims at providing a local development/testing environment which is 
 The following tags are common to both images.
 Full tags are in the form `${SPARK_VERSION}-hadoop${HADOOP_VERSION}-java${JAVA_VERSION}`.
 
-- `3.1.1-hadoop3.2-java11`, `3-java11`, `latest`
-- `3.1.1-hadoop3.2-java8`, `3-java8`
+- `3.1.2-hadoop3.2-java11`, `3-java11`, `3`, `latest`
+- `3.1.2-hadoop3.2-java8`, `3-java8`
+- `3.1.1-hadoop3.2-java11`
+- `3.1.1-hadoop3.2-java8`
 
 Currently, I am building and releasing the images manually, so I do not guarantee to provide the latest Spark version.
 So, if you need an updated version of the image which is not available yet, feel free to open an issue.
