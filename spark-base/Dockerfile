@@ -55,12 +55,13 @@ ENV SPARK_HOME=/opt/spark
 # Install dependencies, spark (with integrated hadoop) and create user
 RUN apk add --no-cache curl bash procps coreutils openjdk${JAVA_VERSION}-jre \
  && wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/${SPARK_ARCHIVE} \
- && mkdir -p /opt/spark \
+ && mkdir -p ${SPARK_HOME} \
  && tar -xvf ${SPARK_ARCHIVE} --strip-components 1 -C ${SPARK_HOME} \
  && rm ${SPARK_ARCHIVE}
 
 # Copy scripts
 COPY ./run.sh ./
+RUN chmod +x ./run.sh
 
 # Run scripts
 CMD ["/bin/bash", "./run.sh"]

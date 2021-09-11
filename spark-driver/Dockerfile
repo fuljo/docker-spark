@@ -17,6 +17,7 @@ ENV SPARK_EVENTLOG_ENABLED=1
 
 # Copy scripts
 COPY ./driver.sh /
+RUN chmod +x /driver.sh
 
 # Run scripts
 CMD ["/bin/bash", "/driver.sh"]
